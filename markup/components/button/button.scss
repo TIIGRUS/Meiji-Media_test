@@ -9,12 +9,15 @@
     color: #fff;
     min-width: 192px;
     padding: 17px 10px;
-    transition: background 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    border: 2px solid transparent;
     cursor: pointer;
 
     &:hover,
     &:focus {
-        background: darken($color: $color-green, $amount: 10);
-        outline: 0;
+       background: #000000;
+       border: 2px solid #77B900;
+       box-shadow: 0px 0px 10px #77B900;
+       outline: 0;
     }
 }
