@@ -1,5 +1,7 @@
 # Тестовое задание для компании Meiji-Media
 
+Задание было выполнено без фреймворков.
+
 ## [Demo](https://tiigrus.github.io/Meiji-Media_test/)
 
 ## Задача:
