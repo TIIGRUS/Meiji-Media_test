@@ -1,6 +1,6 @@
 .popup__container {
     width: 540px;
-    max-width: 100%;
+    max-width: calc(100% - 15px);
     min-height: 410px;
     margin: 0 auto;
     background: #000000;
