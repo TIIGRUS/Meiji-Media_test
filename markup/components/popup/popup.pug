@@ -8,13 +8,5 @@ mixin popup(data)
             })
             h3.popup__title.page__title
                 | ПРЕИМУЩЕСТВА G-SYNC
-            form(action="#").form
-                .form__group
-                    input(type="text", placeholder="Имя").form__control
-                .form__group
-                    input(type="email", placeholder="Mail").form__control
-                .form__group
-                    +button({
-                        title: 'Купить'
-                    })
+            +form()
 

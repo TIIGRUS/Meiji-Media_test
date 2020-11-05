@@ -4,10 +4,13 @@
     width: 100%;
     top: 0;
     left: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
+    display: flex;
+    z-index: -4;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
 
     &:after {
         background: rgba(0, 0, 0, 0.8);
