@@ -1,5 +1,7 @@
 # Тестовое задание для компании Meiji-Media
 
+## [Demo](https://tiigrus.github.io/Meiji-Media_test/)
+
 ## Задача:
 
 Сверстать страницу, показанную на макете.
