@@ -22,11 +22,33 @@ https://www.figma.com/file/GhXlR52smlsa6IpskgMuzo/TestWeb?node-id=0%3A1
 1. ссылка на страницу, которая корректно отображается на всех современных компьютерах, смартфонах и планшетах;
 2. git- репозиторий с исходниками верстки.
 
+# Установка
+
+## TARS-CLI
+
+TARS-CLI — Command Line Interface для сборщика верстки [TARS](https://github.com/tars/tars/blob/master/README_RU.md).
+
+Основная проблема при разработке верстки с помощью TARS — необходимость каждый раз устанавливать все npm-зависимости. Каждый проект в результате занимает больше 200 МБ. Чтобы упростить процедуру инициализации проекта и облегчить работу с TARS в целом был создан TARS-CLI. Вся основная документация по TARS находится в оригинальном репозитории [TARS](https://github.com/tars/tars/blob/master/README_RU.md).
+
+TARS-CLI — это только интерфейс к основному сборщику, который позволяет:
+
+* Инициализировать проект.
+* Запустить dev-сборку с перезагрузкой браузера и открытием туннеля во внешний веб.
+* Запустить build-сборку с минифицированными файлами или в режиме release.
+* Добавить компонент с различным набором файлов.
+* Добавить страницу, как пустую, так и копию существующей.
+
+**Если у вас возникли проблемы при работе с TARS-CLI, прошу ознакомится с разделом [troubleshooting](https://github.com/tars/tars-cli/blob/master/docs/ru/troubleshooting.md).**
+
 ## Установка
 
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). Это удобнее, нагляднее, занимает меньше места. При работе с TARS через TARS-CLI, все дальнейшие шаги по установке не требуются!**
+Для корректной работы необходимо установить TARS-CLI глобально:
 
-Необходимо [установить `Node.js`](http://nodejs.org/) версии >= 4.x.x Если вы используете Node.js версии 5.x.x, убедитесь, что вы используете npm версии 3.x.x и выше. В противном случае обновите npm:
+`npm i -g tars-cli`
+
+Возможно потребуются права суперюзера. Но желательно настроить систему так, чтобы этого не требовалось.
+
+Если вы используете Node.js версии 5.x.x, убедитесь, что вы используете npm версии 3.3.10 и выше. В противном случае обновите npm:
 
 ```bash
 npm i -g npm
@@ -39,91 +61,47 @@ npm i -g npm
 
 Возможно потребуются права суперюзера.
 
-Далее необходимо установить gulp глобально. (Возможно потребуются права суперюзера или администратора)
+Начните свой проект с помощью:
 
-```shell
-npm install -g gulp
+```bash
+tars init
 ```
 
-[Скачайте TARS](../../../tars/archive/master.zip) и распакуйте в рабочую директорию у себя на компьютере.
-Затем устанавливаем зависимости. Команда запускается из папки с файлами TARS (обычно это tars-master).
+## Команды TARS-CLI
 
-```shell
-npm install
-```
+Все команды запускаются по шаблону:
 
-Если не все зависимости были установлены, то последнюю операцию нужно повторить.
+`tars` + `command-name` + `flags`
 
-После установки всех зависимостей необходимо открыть tars-config (подробное описание опций [здесь](/docs/ru/options.md)) и настроить проект под себя.
-В конфиге вы можете выбрать шаблонизатор, css-препроцессор, использование уведомлений, имена папок для различной статики и т.д.
-После настройки проекта, выполняем следующую команду:
+В любой момент можно запустить `tars --help` или `tars -h` или просто `tars`, без дополнительных комманд и флагов. Данная команда выведет информацию о всех доступных командах. Также можно добавить ключ `--help` или `-h` к любой команде, чтобы получить наиболее полное описание команды.
 
-```shell
-gulp init
-```
+`tars -v` или `tars --version` выведет текущую установленную версию TARS-CLI и версию TARS в текущем проекте. Также будет выведена информация по обновлению, если оно доступно.
 
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). [Команда инициализации доступна в TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-init).**
+Практически во всех командах доступен интерактивный режим. В данном режиме вы сможете взаимодействовать с CLI через подобие графического интерфейса. При использовании интерактивного режима вам не нужно знать, какие флаги за что отвечают, так как вы общаетесь с CLI на естественном языке. Интерактивный режим легко отключить, если вам необходимо проводить автоматическое тестирование или что-то еще, что не требует присутствие человека.
 
-Данная команда создаст базовую файловую структуру, подтянет таски для выбранных вами шаблонизатора и css-препроцессора.
+### Command list
 
-Все готово, можно колбасить :)
+* [tars init](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-init) — инициализирует TARS.
+* [tars dev](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-dev) — запускает dev-режим сборки.
+* [tars build](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-build) — запускает build-режим сборки.
+* [tars start](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-start-taskname) — запускает любой gulp-таск из локального gulpfile.
+* [tars add-component](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-add-component-componentname) — добавляет компонент в markup/components.
+* [tars add-page](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-add-page-pagename) — добавляет страницу в markup/pages.
+* [tars update](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-update) — обновляет TARS-CLI.
+* [tars update-project](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-update-project) — обновляет TARS В текущем проекте.
 
-
-## Основные команды
-
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). Это удобнее, нагляднее, занимает меньше места! Все команды, описанные ниже, [доступны в TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md), используйте именно его для работы над проектом. TARS запускался через Gulp, когда не было CLI.**
-
-`gulp init` — Инициализирует проект с заданными опциями в tars-config. Создает файловую структуру.
-
-`gulp re-init` — **команда будет удалена в одном из следующих релизов** Переинициализирует проект с заданными опциями в tars-config. Предлагается использовать данную команду, если вы инициализировали проект с неверными опциями. **Внимание, при переинициализации все папки и файлы удаляются.**
-
-`gulp` или `gulp build` — делает сборку проекта. Подключаются не минимизированные файлы. Тип сборки зависит от переданных ключей вместе с этой командой. Доступные ключи:
-
-* `--min` – в html подключаются минимизированные файлы.
-* `--release` – в html подключаются минимизированные файлы, в названии которых есть hash. Данный режим полезен, если вы напрямую выкладываете верстку на сервер. 
-
-`gulp dev` — инициализация сборщика в режиме разработки. Создается dev-версия проекта, без всех минификаций. Также запускает вотчеры за файлами проекта. Доступные ключи:
-
-* `--lr` – инициализация livereload (живая презагрузка страницы при изменениях в файлах проекта), если он включен в конфиге проекта.
-* `--tunnel` – инициализация проекта с расшариванием верстки во внешний веб.
-
-Ссылка будет указана в консоли. Также будет указана ссылка на панель управления устройствами, на которые расшарена верстка.
-
-`gulp build-dev` — генерация dev-версии проекта без вотчеров.
-
-Ключи, доступные при любом режиме сборки:
-
-* `--ie8` – включить в сборку стили для ie8.
-* `--ie9` – включить в сборку стили для ie9.
-* `--ie` – включить в сборку стили для ie9 и ie8.
-
-
-## Документация
-
-Важно! Все примеры в документации используют настройки по умолчанию.
-
-* [Файловая структура](/docs/ru/file-structure.md)
-* [Работа с тасками и вотчерами](/docs/ru/tasks-and-watchers.md)
-* [Опции TARS](/docs/ru/options.md)
-* [Конфигурирование плагинов](/docs/ru/plugins-options.md)
-* [Html](/docs/ru/html-processing.md)
-* [Css](/docs/ru/css-processing.md)
-* [Js](/docs/ru/js-processing.md)
-* [Работа с изображениями](/docs/ru/images-processing.md)
-* [Работа со шрифтами и misc-файлами](/docs/ru/fonts-and-misc.md)
-* [Сценарии использования](/docs/ru/scenarios.md)
-* [Руководство по обновлению](/docs/ru/update-guide.md)
-* [Руководство для контрибуторов](/docs/ru/for-contributors.md)
-* [FAQ](/docs/ru/faq.md)
-
-
-## Последние изменения
-
-Все последние изменения доступны по ссылке: [История изменений](/docs/ru/changelog.md).
-
-По всем вопросам можно писать в [gitter](https://gitter.im/tars/tars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) или на почту [tars.builder@gmail.com](mailto:tars.builder@gmail.com)
-
-Баги и фича-реквесты сюда: [issues](https://github.com/tars/tars/issues/new).
+По любым вопросам можно обращаться по почте [tars.builder@gmail.com](tars.builder@gmail.com) или в [gitter](https://gitter.im/tars/tars-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 [downloads-image]: http://img.shields.io/npm/dm/tars-cli.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/tars-cli
+[npm-image]: http://img.shields.io/npm/v/tars-cli.svg?style=flat-square
+
+[travis-image]: https://travis-ci.org/tars/tars-cli.svg?branch=master
+[travis-link]: https://travis-ci.org/tars/tars-cli
+
+[deps-image]: https://david-dm.org/tars/tars-cli.svg?style=flat-square
+[deps-link]: https://david-dm.org/tars/tars-cli
+
+[gitter-image]: https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square
+[gitter-link]: https://gitter.im/tars/tars-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge
+
