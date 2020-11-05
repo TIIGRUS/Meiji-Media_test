@@ -1,0 +1,6 @@
+mixin button-close(data)
+    button.button-close(type='button', class=data.class || '')
+        +svg-icon({
+            icon: 'close',
+            class: 'button-close__icon'
+        })

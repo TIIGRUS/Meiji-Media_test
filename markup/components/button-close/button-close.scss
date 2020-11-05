@@ -1,0 +1,13 @@
+.button-close {
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover,&:focus {
+        color: $color-green;
+        .button-close__icon {
+            stroke: $color-green;
+        }
+    }
+}
