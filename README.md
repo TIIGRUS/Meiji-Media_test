@@ -3,7 +3,7 @@
 ## Задача:
 
 Сверстать страницу, показанную на макете.
-https://www.figma.com/file/GhXlR52smlsa6IpskgMuzo/TestWeb?node-id=0%3A1
+[Макет - Фигма](https://www.figma.com/file/GhXlR52smlsa6IpskgMuzo/TestWeb?node-id=0%3A1)
 Внешний вид и состояния элементов должны полностью соответствовать макету.
 
 ### Требования к верстке и используемым инструментам:
