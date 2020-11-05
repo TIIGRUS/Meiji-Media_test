@@ -1,0 +1,23 @@
+.header__navbar {
+    flex: 1 1;
+
+    @media (max-width: $screen-md) {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        transition: left 0.25s linear;
+
+        &:after {
+            content: '';
+            position: absolute;
+            background: #000;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+}

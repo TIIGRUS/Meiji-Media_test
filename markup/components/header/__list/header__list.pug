@@ -1,0 +1,10 @@
+mixin header__list()
+    ul.header__list
+        li
+            +logo()
+        li
+            button.header__menu-toggle(type='button')
+                +svg-icon({
+                    icon: 'toggler-menu'
+                })
+

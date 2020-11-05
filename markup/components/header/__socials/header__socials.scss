@@ -1,0 +1,10 @@
+.header__socials {
+     @media(max-width: $screen-md) {
+         flex-basis: 100%;
+         justify-content: center;
+     }
+
+     @media(max-width: $screen-md) {
+         margin: auto 0 54px;
+     }
+}
