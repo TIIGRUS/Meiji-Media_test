@@ -1,0 +1,8 @@
+.logo__image {
+    object-fit: cover;
+
+     @media(max-width: $screen-md) {
+         width: 45px;
+         height: 34px;
+     }
+}
