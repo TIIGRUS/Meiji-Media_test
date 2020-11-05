@@ -595,18 +595,6 @@ html {
   stroke: #77B900;
 }
 
-.cards__title {
-  color: #77B900;
-  margin: 30px 0 15px;
-  text-align: center;
-}
-
-@media (min-width: 968px) {
-  .cards__title {
-    text-align: left;
-  }
-}
-
 .cards__list {
   list-style: none;
   margin: 0 0 35px;
@@ -619,6 +607,18 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.cards__title {
+  color: #77B900;
+  margin: 30px 0 15px;
+  text-align: center;
+}
+
+@media (min-width: 968px) {
+  .cards__title {
+    text-align: left;
+  }
 }
 
 .cards__title-span {
@@ -834,16 +834,16 @@ html {
   }
 }
 
-.page__title {
-  font: 700 26px/1.3 "Play", sans-serif;
-  letter-spacing: 0.25px;
-}
-
 .page__container {
   max-width: 1110px;
   min-width: 320px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.page__title {
+  font: 700 26px/1.3 "Play", sans-serif;
+  letter-spacing: 0.25px;
 }
 
 .popup_is-opened {
