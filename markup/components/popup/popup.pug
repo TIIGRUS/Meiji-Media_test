@@ -1,0 +1,20 @@
+include ../button/button.pug
+
+mixin popup(data)
+    section.popup
+        .popup__container
+            +button-close({
+                class: 'button-close_place_popup'
+            })
+            h3.popup__title.page__title
+                | ПРЕИМУЩЕСТВА G-SYNC
+            form(action="#").form
+                .form__group
+                    input(type="text", placeholder="Имя").form__control
+                .form__group
+                    input(type="email", placeholder="Mail").form__control
+                .form__group
+                    +button({
+                        title: 'Купить'
+                    })
+
