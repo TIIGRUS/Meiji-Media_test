@@ -1,0 +1,12 @@
+include __list-item/navbar__list-item.pug
+mixin navbar(data)
+    nav.navbar
+        ul.navbar__list
+            +navbar__list-item
+                img(src="__static__img/general/logo.svg", alt="", srcset="")
+            +navbar__list-item
+                | Продукты
+            +navbar__list-item
+                | Технологии
+            +navbar__list-item
+                | Experience
