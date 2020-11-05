@@ -3,12 +3,17 @@ html(class="no-js" lang="ru")
 
     include ../components/head/head.pug
     include ../components/header/header.pug
+    include ../components/navbar/navbar.pug
+    include ../components/socials/socials.pug
     include ../components/footer/footer.pug
 
     head
         +head(head.index)
+
     body.page
         +header()
+            +navbar()
+            +socials()
 
         main.main
             section
