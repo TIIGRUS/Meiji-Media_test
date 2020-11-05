@@ -1,0 +1,20 @@
+.button {
+    font-family: $fontPlay;
+    font-weight: 700;
+    background: $color-green;
+    border: none;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.25px;
+    color: #fff;
+    min-width: 192px;
+    padding: 17px 10px;
+    transition: background 0.25s ease-in-out;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: darken($color: $color-green, $amount: 10);
+        outline: 0;
+    }
+}

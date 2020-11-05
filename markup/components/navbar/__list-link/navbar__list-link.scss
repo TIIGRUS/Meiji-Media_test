@@ -2,4 +2,10 @@
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: $color-green;
+    }
 }

@@ -1,0 +1,36 @@
+include ../button/button.pug
+include __item/cards__item.pug
+
+mixin cards(data)
+    section.cards
+        ul.cards__list
+            +cards__item({
+                icon: 'eye',
+                title: 'HDR',
+                span: 'DISPLAY',
+                 description: 'Получите более широкий и комфортный для восприятия диапазон цветовой гаммы, чем в обычных мониторах.',
+            })
+            +cards__item({
+                icon: 'eye-timer',
+                title: 'INPUT',
+                span: 'LAG',
+                description: 'Мониторы с технологией G-SYNC обеспечивают минимальную задержку между нажатием клавиш и результатом на экране, что очень важно для геймеров.',
+            })
+            +cards__item({
+                icon: 'refresh',
+                title: 'HIGH REFRESH',
+                span: 'RATE',
+                description: 'NVIDIA тесно сотрудничает с производителями мониторов, чтобы вывести на рынок широкий спектр дисплеев с высокой частотой обновления экрана от 75 до 360 Гц.',
+            })
+            +cards__item({
+                icon: 'colors',
+                title: 'WIDE COLOR',
+                span: 'GAMUT',
+                description: 'Современные мониторы G-SYNC ULTIMATE поддерживают цветовой охват DCI-P3, обеспечивая более реалистичную цветопередачу с плавными переходами.',
+            })
+
+        +button({
+            type: 'button',
+            title: 'КУПИТЬ',
+            class: 'cards__button'
+        })

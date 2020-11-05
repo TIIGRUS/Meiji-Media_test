@@ -1,7 +1,7 @@
 .navbar__list-item {
     padding: 0 48px 0 0;
-}
 
-.navbar__list-item:last-child {
-    padding: 0;
+    &:last-child {
+        padding: 0;
+    }
 }

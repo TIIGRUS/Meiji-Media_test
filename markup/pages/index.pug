@@ -5,6 +5,8 @@ html(class="no-js" lang="ru")
     include ../components/header/header.pug
     include ../components/navbar/navbar.pug
     include ../components/socials/socials.pug
+    include ../components/promo/promo.pug
+    include ../components/cards/cards.pug
     include ../components/footer/footer.pug
 
     head
@@ -16,7 +18,8 @@ html(class="no-js" lang="ru")
             +socials()
 
         main.main
-            section
+            +promo()
+            +cards()
 
         +footer()
 

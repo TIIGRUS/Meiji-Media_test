@@ -1,0 +1,7 @@
+mixin cards__item(data)
+    li.cards__item
+        != pugHelpers.Icon.call(locals, {iconName: data.icon, className: 'cards__image'})
+        h2.cards__title.page__title=data.title
+            | &#32
+            span(class="cards__title-span")=data.span
+        p.cards__description=data.description
