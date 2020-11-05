@@ -2,9 +2,7 @@
     font: 400 16px/28px 'Roboto', Arial, Helvetica, sans-serif;
     letter-spacing: 0.3px;
     color: #fff;
-    background: #000;
-    max-width: 1110px;
-    min-width: 320px;
-    margin: 0 auto;
-    padding: 0 15px;
+    background: bottom/ cover no-repeat url('../img/general/bg.jpg'), #000;
+    display: flex;
+    height: 100%;
 }

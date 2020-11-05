@@ -1,5 +1,5 @@
 mixin socials(data)
-    ul.socials
+    ul.socials.header__socials
         li.socials__list-item
             a(href="#").socials__list-link
                 != pugHelpers.Icon.call(locals, {iconName: 'twitter', className: 'socials__list-icon', iconWidth: '30', iconHeight: '24'})

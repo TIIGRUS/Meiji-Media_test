@@ -1,2 +1,12 @@
 mixin form(data)
-    .form
+    form(action="#").form
+        .form__group
+            input(type="text" placeholder="Имя").form__control
+        .form__group
+            input(type="email" placeholder="Mail").form__control
+        .form__group
+            +button({
+                title: 'Купить',
+                class: 'button_submit',
+                type: 'submit'
+            })

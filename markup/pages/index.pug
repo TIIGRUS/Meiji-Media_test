@@ -2,26 +2,34 @@ doctype html
 html(class="no-js" lang="ru")
 
     include ../components/head/head.pug
+    include ../components/logo/logo.pug
     include ../components/header/header.pug
+    include ../components/header/__list/header__list.pug
     include ../components/navbar/navbar.pug
     include ../components/socials/socials.pug
     include ../components/promo/promo.pug
     include ../components/cards/cards.pug
-    include ../components/footer/footer.pug
+    include ../components/cards/__item/cards__item.pug
+    include ../components/mixins/svg-icon.pug
+    include ../components/button-close/button-close.pug
+    include ../components/popup/popup.pug
+    include ../components/form/form.pug
 
     head
         +head(head.index)
 
     body.page
-        +header()
-            +navbar()
-            +socials()
+        .page__container
+            +header()
+                +header__list()
+                +navbar()
+                    +socials()
 
-        main.main
-            +promo()
-            +cards()
+            main.main
+                +promo()
+                +cards()
 
-        +footer()
+            +popup()
 
         |%=symbols=%
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
