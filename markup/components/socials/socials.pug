@@ -1,0 +1,9 @@
+mixin socials(data)
+    ul.socials
+        li.socilas__list-item
+            a(href="#").socilas__list-link
+                != pugHelpers.Icon.call(locals, {iconName: 'twitter', className: 'socilas__list-icon', iconWidth: '30', iconHeight: '24'})
+        li.socilas__list-item
+            a(href="#").socilas__list-link
+                != pugHelpers.Icon.call(locals, {iconName: 'inst', className: 'socilas__list-icon', iconWidth: '25', iconHeight: '25'})
+
